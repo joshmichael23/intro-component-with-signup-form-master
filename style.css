@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --red: 0, 100%, 74%;
+    --green: 154, 59%, 51%;
+    --blue: 248, 32%, 49%;
+    --DarkBlue: 249, 10%, 26%;
+    --GrayishBlue: 246, 25%, 77%;
+
+    --erroricon: url('/images/icon-error.svg');
+
+    --color-green: hsl(var(--green));
+    --color-blue: hsl(var(--blue));
+    --color-red: hsl(var(--red));
+    --color-darkblue: hsl(var(--DarkBlue));
+    --color-grayishblue: hsl(var(--GrayishBlue));
+}
+
+
+*{
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    min-height: 100%;
+    height: 100vh;
+    background: url('images/bg-intro-desktop.png'), var(--color-red);
+    background-size: cover;
+    background-blend-mode: overlay;
+    margin:0;
+    font-size: 16px;
+}
+
+h1{
+    max-width: 500px;
+    font-size: 3em;
+    font-weight: 700;
+    color: white;
+}
+
+h2{
+    padding: 1em;
+    font-size: 1em;
+    border-radius: .5em;
+    background-color: var(--color-blue);
+    color:white;
+    text-align: center;
+    box-shadow: 0 .5em hsl(var(--DarkBlue), .2);
+}
+
+h2 >span{
+    font-weight: 400;
+    
+}
+
+p{
+    max-width: 500px;
+    color:white;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main{
+    margin-top:auto;
+    margin-bottom:auto;
+    padding: 3em;
+    
+    width: 100%;
+    display:flex;
+    align-self: center;
+}
+
+.main-content{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.form{
+    background-color: white;
+    
+    border-radius: 1em;
+    display:flex;
+    gap: 1em;
+    flex-direction: column;
+    box-shadow: 0 .5em hsl(var(--DarkBlue), .2);
+}
+
+
+.errorMsg{
+    margin-top: -1em;
+    font-size: .8em;
+    color: var(--color-red);
+    text-align: right;
+    font-style: italic;
+    display:none;
+
+}
+
+#btnClaim:focus{
+    background-color: hsl(var(--green), .5);
+}
+
+#btnClaim{
+    border:none;
+    background-color: var(--color-green);
+    border-radius: .5em;
+    color:white;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    transition: all .2s;
+    box-shadow: 0 .5em hsl(var(--green), .3);
+}
+
+.form-footer{
+    text-align: center;
+    color:gray;
+    font-size: 0.7em;
+}
+
+.form-footer > span{
+    font-weight: 700;
+    color: var(--color-red);
+}
+
+.form>input{
+    border: 1px solid hsl(var(--GrayishBlue)); 
+    padding: 1em;
+    font-weight: 700;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: hsl(var(--DarkBlue));
+    outline: none;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 50% contain;
+    background-position: right;
+    background-origin: content-box;
+    padding-top: 1em;
+}
+
+.form>input:focus{
+    
+    border-color: black;
+}
+
+body > footer{
+    display:flex;
+    justify-content: center;
+}
+
+
+@media screen and (min-width: 300px) {
+    main{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero{
+        width: 100%;
+    }
+
+    .main-content{
+        width: 100%;
+    }
+
+    h1{
+        
+        font-size:2em;
+        text-align: center;
+    }
+
+    h2{
+        padding: 1em 2em; 
+    }
+
+    .hero > p{
+        text-align: center;
+    }
+
+    .form{
+        padding: 2em;
+    }
+
+    #btnClaim{
+        padding: 1em 1em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    main{
+        flex-direction: row;
+        gap: 3em;
+    }
+
+    .hero{
+        
+        width: 50%;
+    }
+
+    .main-content{
+        
+        width: 50%;
+        margin-right:auto;
+    }
+
+    h1{
+        margin-left:auto;
+        text-align: start;
+        font-size:3em;
+    }
+
+    h2{
+        
+        padding: 1em; 
+    }
+
+    .hero > p{
+        margin-left: auto;
+        text-align: start;
+    }
+
+    .form{
+        padding: 2em;
+    }
+
+    
+
+}
